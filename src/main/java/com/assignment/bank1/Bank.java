@@ -16,7 +16,7 @@ public class Bank {
 
 	    BankLogic obj = new BankLogic(name, account_num);
 	    Boolean loop-end = true;
-	    while (loop-end) {
+	    while (Boolean.TRUE.equals(loop-end)) {
 
 	      System.out.println("Deposit(1), Withdraw(2), Show balance(3), Cancel(4). Enter Your Choice :");
 	      int operation1 = sc.nextInt();
