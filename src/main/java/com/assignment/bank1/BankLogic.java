@@ -3,22 +3,22 @@ package com.assignment.bank1;
 
 public class BankLogic {
     private String name;
-    private int account_num;
+    private int accountnum;
     private double balance=0;
 
-    BankLogic(String name ,int account_num){
+    BankLogic(String name ,int accountnum){
         this.name=name;
-        this.account_num=account_num;
+        this.account-num=account-num;
     }
 
-    void deposit(double deposit_amount){
-        balance +=deposit_amount;
+    void deposit(double depositamount){
+        balance +=depositamount;
         System.out.println("Successfully Deposited!!!"); 
     }
 
-    void withdrawal(double withdrawal_amount){
-        if(withdrawal_amount<=balance){
-            balance-=withdrawal_amount;
+    void withdrawal(double withdrawalamount){
+        if(withdrawalamount<=balance){
+            balance-=withdrawalamount;
             System.out.println("Withdrawal Completed");
         }
         else{
@@ -26,7 +26,7 @@ public class BankLogic {
         }    
     }
 
-    double show_balance(){
+    double showbalance(){
         return balance;
     }
 
