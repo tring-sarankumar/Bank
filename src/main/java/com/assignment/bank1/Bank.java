@@ -15,8 +15,8 @@ public class Bank {
 	    int account_num = sc.nextInt();
 
 	    BankLogic obj = new BankLogic(name, account_num);
-	    Boolean loop_end = true;
-	    while (loop_end) {
+	    Boolean loop-end = true;
+	    while (loop-end) {
 
 	      System.out.println("Deposit(1), Withdraw(2), Show balance(3), Cancel(4). Enter Your Choice :");
 	      int operation1 = sc.nextInt();
@@ -41,7 +41,10 @@ public class Bank {
 
 	      case 4:
 	    	System.out.println("Your Transation Cancelled ");
-	        loop_end = false;
+	        loop-end = false;
+			      
+	      default:
+		System.out.println("Enter correct number");   
 
 	      }
 	    }
