@@ -28,7 +28,7 @@ public class BankLogic {
     }
 
     void showbalance() {
-        log.info("Name " + name + " AccountNumber " + accountnum + " Balnace " + balance);;
+        log.fine("Name {} AccountNumber {} balance {}" , name , accountnum ,balance);
     }
 
 }
