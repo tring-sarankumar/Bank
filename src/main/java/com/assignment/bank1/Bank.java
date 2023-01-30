@@ -18,7 +18,7 @@ public class Bank {
         BankLogic obj = new BankLogic(name, accountnum);
         Boolean loopend = true;
         int operation1 = 0;
-        while (loopend) {
+        while (Boolean.TRUE.equals(loopend)) {
 
             log.info("Deposit(1), Withdraw(2), Show balance(3), Cancel(4). Enter Your Choice :");
             try {
@@ -61,6 +61,8 @@ public class Bank {
             case 4:
                 log.info("Your Transation Cancelled ");
                 loopend = false;
+                default:
+                    log.info("Choose correct option");
 
             }
         }
