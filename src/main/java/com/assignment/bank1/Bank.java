@@ -1,55 +1,70 @@
 package com.assignment.bank1;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Bank {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        Logger log = Logger.getLogger("Bank");
+        Scanner sc = new Scanner(System.in);
 
-	    System.out.println("Enter Name:");
-	    String name = sc.nextLine();
+        log.info("Enter Name:");
+        String name = sc.nextLine();
 
-	    System.out.println("Enter Account Number:");
-	    int account_num = sc.nextInt();
+        log.info("Enter Account Number:");
+        int accountnum = sc.nextInt();
 
-	    BankLogic obj = new BankLogic(name, account_num);
-	    Boolean loop-end = true;
-	    while (Boolean.TRUE.equals(loop-end)) {
+        BankLogic obj = new BankLogic(name, accountnum);
+        Boolean loopend = true;
+        int operation1 = 0;
+        while (loopend) {
 
-	      System.out.println("Deposit(1), Withdraw(2), Show balance(3), Cancel(4). Enter Your Choice :");
-	      int operation1 = sc.nextInt();
-	      switch (operation1) {
+            log.info("Deposit(1), Withdraw(2), Show balance(3), Cancel(4). Enter Your Choice :");
+            try {
 
-	      case 1:
-	        System.out.println("Enter The Amount To Deposit:");
-	        double deposit_amount = sc.nextDouble();
-	        obj.deposit(deposit_amount);
-	        break;
+                operation1 = sc.nextInt();
+            } catch (Exception e) {
 
-	      case 2:
-	        System.out.println("Enter The Amount You Want to Withdraw:");
-	        double withdraw_amount = sc.nextDouble();
-	        obj.withdrawal(withdraw_amount);
-	        break;
+                log.info(String.valueOf(e));
 
-	      case 3:
-	        System.out.println("Your Balance:");
-	        System.out.println(obj.show_balance());
-	        break;
+            }
+            switch (operation1) {
 
-	      case 4:
-	    	System.out.println("Your Transation Cancelled ");
-	        loop-end = false;
-			      
-	      default:
-		System.out.println("Enter correct number");   
+            case 1:
+                try {
+                    log.info("Enter The Amount To Deposit:");
 
-	      }
-	    }
+                    double depositamount = sc.nextDouble();
+                    obj.deposit(depositamount);
+                } catch (Exception e) {
+                    log.info(String.valueOf(e));
+                    loopend = false;
+                }
+                break;
 
+            case 2:
+                try {
+                    log.info("Enter The Amount You Want to Withdraw:");
+                    double withdrawamount = sc.nextDouble();
+                    obj.withdrawal(withdrawamount);
+                } catch (Exception e) {
+                    log.info(String.valueOf(e));
+                    loopend = false;
+                }
+                break;
 
-	}
+            case 3:
+                obj.showbalance();
+                break;
+
+            case 4:
+                log.info("Your Transation Cancelled ");
+                loopend = false;
+
+            }
+        }
+
+    }
 
 }
