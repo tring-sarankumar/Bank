@@ -61,6 +61,7 @@ public class Bank {
             case 4:
                 log.info("Your Transation Cancelled ");
                 loopend = false;
+                break;
                 default:
                     log.info("Choose correct option");
 
