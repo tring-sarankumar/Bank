@@ -1,34 +1,34 @@
 package com.assignment.bank1;
 
+import java.util.logging.Logger;
 
 public class BankLogic {
     private String name;
     private int accountnum;
-    private double balance=0;
+    private double balance = 0;
+    Logger log = Logger.getLogger("CreditCard");
 
-    BankLogic(String name ,int accountnum){
-        this.name=name;
-        this.account-num=account-num;
+    BankLogic(String name, int accountnum) {
+        this.name = name;
+        this.accountnum = accountnum;
     }
 
-    void deposit(double depositamount){
-        balance +=depositamount;
-        System.out.println("Successfully Deposited!!!"); 
+    void deposit(double depositamount) {
+        balance += depositamount;
+        log.info("Successfully Deposited!!!");
     }
 
-    void withdrawal(double withdrawalamount){
-        if(withdrawalamount<=balance){
-            balance-=withdrawalamount;
-            System.out.println("Withdrawal Completed");
+    void withdrawal(double withdrawalamount) {
+        if (withdrawalamount <= balance) {
+            balance -= withdrawalamount;
+            log.info("Withdrawal Completed");
+        } else {
+            log.info("Insufficient Balance");
         }
-        else{
-            System.out.println("Insufficient Balance");
-        }    
     }
 
-    double showbalance(){
-        return balance;
+    void showbalance() {
+        log.info("Name " + name + " AccountNumber " + accountnum + " Balnace " + balance);;
     }
 
 }
-
