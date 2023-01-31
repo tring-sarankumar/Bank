@@ -21,37 +21,25 @@ public class Bank {
         while (Boolean.TRUE.equals(loopend)) {
 
             log.info("Deposit(1), Withdraw(2), Show balance(3), Cancel(4). Enter Your Choice :");
-            try {
 
-                operation1 = sc.nextInt();
-            } catch (Exception e) {
+            operation1 = sc.nextInt();
 
-                log.info(String.valueOf(e));
-
-            }
             switch (operation1) {
 
             case 1:
-                try {
-                    log.info("Enter The Amount To Deposit:");
 
-                    double depositamount = sc.nextDouble();
-                    obj.deposit(depositamount);
-                } catch (Exception e) {
-                    log.info(String.valueOf(e));
-                    loopend = false;
-                }
+                log.info("Enter The Amount To Deposit:");
+
+                double depositamount = sc.nextDouble();
+                obj.deposit(depositamount);
+
                 break;
 
             case 2:
-                try {
-                    log.info("Enter The Amount You Want to Withdraw:");
-                    double withdrawamount = sc.nextDouble();
-                    obj.withdrawal(withdrawamount);
-                } catch (Exception e) {
-                    log.info(String.valueOf(e));
-                    loopend = false;
-                }
+
+                log.info("Enter The Amount You Want to Withdraw:");
+                double withdrawamount = sc.nextDouble();
+                obj.withdrawal(withdrawamount);
                 break;
 
             case 3:
@@ -62,8 +50,8 @@ public class Bank {
                 log.info("Your Transation Cancelled ");
                 loopend = false;
                 break;
-                default:
-                    log.info("Choose correct option");
+            default:
+                log.info("Choose correct option");
 
             }
         }
